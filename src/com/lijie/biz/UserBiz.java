@@ -10,7 +10,9 @@ import com.lijie.dao.UserDao;
 import com.lijie.entity.Users;
 @Component
 public class UserBiz {
-	
+	/**
+	 * ææ°
+	 */
 	@Autowired
 	private UserDao userDao;
 	
@@ -21,7 +23,7 @@ public class UserBiz {
 
 
 	/**
-	 * ²éÑ¯ËùÓĞÓÃ»§
+	 * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	 * @return
 	 */
 	public List<Users> selectByUser(Map<String, String> map){
@@ -30,7 +32,7 @@ public class UserBiz {
 	}
 	
 	/**
-	 * É¾³ıËùÑ¡ÓÃ»§
+	 * É¾ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Ã»ï¿½
 	 * @return
 	 */
 	public void deleteByUser(List<String> list){
@@ -38,7 +40,7 @@ public class UserBiz {
 	}
 	
 	/**
-	 * ĞÂÔöÓÃ»§
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	 * @return
 	 */
 	public void insertByUsers(Users user){
@@ -46,7 +48,7 @@ public class UserBiz {
 	}
 	
 	/**
-	 * ĞŞ¸ÄÓÃ»§
+	 * ï¿½Ş¸ï¿½ï¿½Ã»ï¿½
 	 * @return
 	 */
 	public void updateByUsers(Users user){
