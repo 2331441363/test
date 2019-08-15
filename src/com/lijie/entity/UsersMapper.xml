@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lijie.entity.Users">
+
+  	<select id="selectByUsers" resultType="Users" parameterType="Map">
+		select userId,userPassword,userSex,userPhone from (
+		select u.*,rownum rn from 
+		(select * from users) u where rownum &lt;= #{page} * #{rows}) 
+		where rn &gt; (#{page}-1) * #{rows}
+		
+	</select>
+	
+	<insert id="insertByUsers" parameterType="Users">
+		insert into users
+		values(#{userId},#{userPassword},#{userSex},#{userPhone})
+	</insert>
+	
+	<delete id="deleteByUsers" parameterType="List">
+		delete from users 
+		<where>
+			userId in 
+			<foreach collection="list" index="index" open="(" close=")" separator="," item="i" >
+				#{i}
+			</foreach>
+		</where>
+	</delete>
+	
+	<update id="updateByUsers" parameterType="Users">
+		update users set userPassword = #{userPassword},userSex = #{userSex},userPhone = #{userPhone} where userId = #{userId}
+	</update>
+</mapper>
